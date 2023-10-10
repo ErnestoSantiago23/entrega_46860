@@ -1,3 +1,12 @@
+header, footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.cardCircuitos, .noticias {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +17,6 @@ body {
 
 header {
   background-color: #8C0335;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px; }
   header .logo {
     width: 9.375rem;
@@ -49,6 +53,35 @@ header {
         header nav .navBar li {
           margin: 5px 0; } }
 
+footer {
+  background-color: #8C0335;
+  padding: 20px; }
+  footer div:first-child {
+    width: 9.375rem;
+    height: 6.25rem;
+    overflow: hidden; }
+    footer div:first-child img {
+      width: 100%;
+      padding: 10px .625rem; }
+  footer div.rrss {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; }
+    footer div.rrss a img {
+      width: 2rem;
+      transition: transform 0.3s ease; }
+      footer div.rrss a img:hover {
+        transform: scale(1.1); }
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; }
+      footer div:first-child {
+        margin-bottom: 10px; }
+      footer div.rrss {
+        gap: 10px; } }
+
 .carrusel div {
   position: relative;
   width: 100%;
@@ -73,15 +106,119 @@ header {
       .carrusel div div h1 {
         font-size: 1.5em; } }
 
+.titulos {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3.125rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  text-align: center; }
+
+.cardCircuitos {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: start;
+  background-color: #64858C;
+  border-radius: 8px;
+  overflow: hidden; }
+  .cardCircuitos img {
+    width: 100%;
+    border-radius: 8px 0 0 8px; }
+  .cardCircuitos .str_circuitos {
+    padding: 20px;
+    color: white; }
+    .cardCircuitos .str_circuitos h2 {
+      margin: 0 0 10px 0; }
+    .cardCircuitos .str_circuitos p {
+      margin: 5px 0; }
+  @media (max-width: 768px) {
+    .cardCircuitos {
+      grid-template-columns: 1fr; }
+      .cardCircuitos img {
+        border-radius: 8px 8px 0 0; } }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem; }
+  @media (max-width: 768px) {
+    .gridContainer {
+      grid-template-columns: 1fr; } }
+
+.cardCircuitos {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: start;
+  background-color: #64858C;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; }
+  .cardCircuitos img {
+    width: 100%;
+    border-radius: 8px 0 0 8px; }
+  .cardCircuitos .str_circuitos {
+    padding: 20px;
+    color: white; }
+    .cardCircuitos .str_circuitos h2 {
+      margin: 0 0 10px 0; }
+    .cardCircuitos .str_circuitos p {
+      margin: 5px 0; }
+  @media (max-width: 768px) {
+    .cardCircuitos {
+      grid-template-columns: 1fr; }
+      .cardCircuitos img {
+        border-radius: 8px 8px 0 0; } }
+
+.secEscuderias {
+  padding: 40px;
+  background-color: #1F1F1F;
+  color: white;
+  font-family: "Arial", sans-serif;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; }
+  .secEscuderias h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em; }
+  .secEscuderias div {
+    display: flex;
+    gap: 20px; }
+    .secEscuderias div img {
+      max-width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+    .secEscuderias div div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px; }
+      .secEscuderias div div p {
+        margin: 5px 0; }
+      .secEscuderias div div img {
+        align-self: center;
+        max-width: 50%;
+        margin-top: auto; }
+  @media (max-width: 768px) {
+    .secEscuderias div {
+      flex-direction: column;
+      align-items: center; }
+      .secEscuderias div img {
+        max-width: 100%;
+        margin-bottom: 20px; } }
+
 .noticias {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: #51768C;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
-  overflow: hidden; }
+  overflow: hidden;
+  color: white; }
   .noticias > div:first-child {
     flex: 1;
     max-width: 40%;
@@ -109,67 +246,36 @@ header {
         max-width: 100%;
         margin-right: 0; } }
 
-.gridContainer {
+.container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2.5rem; }
-  @media (max-width: 768px) {
-    .gridContainer {
-      grid-template-columns: 1fr; } }
-
-.cardCircuitos {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  align-items: start;
-  background-color: #64858C;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden; }
-  .cardCircuitos img {
-    width: 100%;
-    border-radius: 8px 0 0 8px; }
-  .cardCircuitos .str_circuitos {
-    padding: 20px; }
-    .cardCircuitos .str_circuitos h2 {
-      margin: 0 0 10px 0; }
-    .cardCircuitos .str_circuitos p {
-      margin: 5px 0; }
-  @media (max-width: 768px) {
-    .cardCircuitos {
-      grid-template-columns: 1fr; }
-      .cardCircuitos img {
-        border-radius: 8px 8px 0 0; } }
-
-footer {
-  background-color: #8C0335;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  gap: 20px;
   padding: 20px; }
-  footer div:first-child {
-    width: 9.375rem;
-    height: 6.25rem;
-    overflow: hidden; }
-    footer div:first-child img {
-      width: 100%;
-      padding: 10px .625rem; }
-  footer div.rrss {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; }
-    footer div.rrss a img {
-      width: 2rem;
-      transition: transform 0.3s ease; }
-      footer div.rrss a img:hover {
-        transform: scale(1.1); }
+
+.pilotos {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  background-color: #FFD500;
+  border-radius: 10px;
+  overflow: hidden; }
+  .pilotos img {
+    width: 100%;
+    border-radius: 10px 0 0 10px; }
+  .pilotos div {
+    padding: 20px; }
+    .pilotos div h2 {
+      font-family: "Arial", sans-serif;
+      color: #1F1F1F;
+      font-size: 24px;
+      margin-bottom: 10px; }
+    .pilotos div p {
+      font-family: "Arial", sans-serif;
+      color: #1F1F1F;
+      font-size: 16px;
+      margin-bottom: 5px; }
   @media (max-width: 768px) {
-    footer {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px; }
-      footer div:first-child {
-        margin-bottom: 10px; }
-      footer div.rrss {
-        gap: 10px; } }
+    .pilotos {
+      grid-template-columns: 1fr; }
+      .pilotos img {
+        border-radius: 10px 10px 0 0; } }

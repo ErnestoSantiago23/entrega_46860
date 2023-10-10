@@ -1,0 +1,46 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+    gap: 20px; 
+    padding: 20px;
+}
+
+.pilotos {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px; 
+    background-color: $secondary-color;
+    border-radius: 10px;
+    overflow: hidden; 
+
+    img {
+        width: 100%; 
+        border-radius: 10px 0 0 10px;
+    }
+
+    div {
+        padding: 20px;
+
+        h2 {
+            font-family: $font-family;
+            color: $primary-color;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: $font-family;
+            color: $primary-color;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; 
+
+        img {
+            border-radius: 10px 10px 0 0;
+        }
+    }
+}

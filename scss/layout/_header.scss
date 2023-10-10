@@ -1,0 +1,64 @@
+header {
+    @extend %flex-row-center;
+    background-color: #8C0335;
+    padding: 10px; 
+
+    .logo {
+        width: 9.375rem;
+        height: 6.25rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            padding: 10px .625rem;
+        }
+    }
+
+    nav {
+        .navBar {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding: 0;
+
+            li {
+                text-align: center;
+                margin: 0 10px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    @media (max-width: 768px) {
+        flex-direction: column; 
+        .logo {
+            width: auto; 
+            height: auto;
+            text-align: center; 
+
+            img {
+                padding: 5px .3125rem; 
+            }
+        }
+
+        nav {
+            .navBar {
+                flex-direction: column; 
+                align-items: center; 
+
+                li {
+                    margin: 5px 0; 
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.cardCircuitos {
+    display: grid; 
+    grid-template-columns: 2fr 3fr; 
+    align-items: start; 
+    background-color: #64858C;
+    border-radius: 8px;
+    @extend %shadow;
+    overflow: hidden;
+
+    img {
+        width: 100%; 
+        border-radius: 8px 0 0 8px;
+    }
+
+    .str_circuitos {
+        padding: 20px;
+        color: white;
+
+        h2 {
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; 
+
+        img {
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}
