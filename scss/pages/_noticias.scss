@@ -1,4 +1,5 @@
 .noticias {
+    padding: 0 3.125rem;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -44,6 +45,7 @@
     }
 
     @media (max-width: 768px) {
+        padding: 0 1.5625rem;
         flex-direction: column;
 
         > div:first-child {
